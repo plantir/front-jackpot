@@ -54,21 +54,23 @@ export default {
         else if (this.credit > 60 && is_win && Math.random() < 0.6) {
           this.result = this.rollAll();
         }
-        if (this.result[0] == "C") {
-          this.credit += 10;
-        }
-        if (this.result[0] == "L") {
-          this.credit += 20;
-        }
-        if (this.result[0] == "O") {
-          this.credit += 30;
-        }
-        if (this.result[0] == "W") {
-          this.credit += 40;
-        }
       }
       setTimeout(() => {
         this.start_spin = false;
+        if (is_win) {
+          if (this.result[0] == "C") {
+            this.credit += 10;
+          }
+          if (this.result[0] == "L") {
+            this.credit += 20;
+          }
+          if (this.result[0] == "O") {
+            this.credit += 30;
+          }
+          if (this.result[0] == "W") {
+            this.credit += 40;
+          }
+        }
       }, 3000);
       this.credit--;
     },

@@ -1,46 +1,57 @@
 <style scoped>
 .spin-wrapper {
-  width: 40px;
+  width: 80px;
+  height: 120px;
+  box-shadow: inset 0 0 10px;
   overflow: hidden;
+  position: relative;
 }
 .column-wrapper {
   display: flex;
+  flex-direction: column;
+  position: absolute;
 }
 .column-wrapper.spin {
-  animation: spin 0.4s infinite;
+  animation: spin 0.2s infinite;
 }
 .column-wrapper div {
   font-size: 33px;
-  width: 40px;
+  width: 80px;
+  padding: 20px 0;
+  height: 120px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  flex: 0 0 40px;
+  flex: 0 0 80px;
+}
+.column-wrapper div img {
+  width: 100%;
 }
 @keyframes spin {
   0% {
-    transform: translateX(0);
+    top: 0;
   }
   25% {
-    transform: translateX(-40px);
+    top: -120px;
   }
   50% {
-    transform: translateX(-80px);
+    top: -240px;
   }
   75% {
-    transform: translateX(-120px);
+    top: -360px;
   }
   100% {
-    transform: translateX(0);
+    top: 0;
   }
 }
 </style>
 <template>
   <section class="spin-wrapper">
     <div :class="{ spin }" :style="style" class="column-wrapper">
-      <div>C</div>
-      <div>L</div>
-      <div>O</div>
-      <div>W</div>
+      <div><img src="@/assets/img/cherry.png" alt="" /></div>
+      <div><img src="@/assets/img/lemon.png" alt="" /></div>
+      <div><img src="@/assets/img/orange.png" alt="" /></div>
+      <div><img src="@/assets/img/watermallon.png" alt="" /></div>
     </div>
   </section>
 </template>
@@ -55,16 +66,16 @@ export default {
     val: {
       handler: function () {
         if (this.val == "C") {
-          this.style = { transform: "translateX(0)" };
+          this.style = { top: "0" };
         }
         if (this.val == "L") {
-          this.style = { transform: "translateX(-40px)" };
+          this.style = { top: "calc(-1 * 120px)" };
         }
         if (this.val == "O") {
-          this.style = { transform: "translateX(-80px)" };
+          this.style = { top: "calc(-2 * 120px)" };
         }
         if (this.val == "W") {
-          this.style = { transform: "translateX(-120px)" };
+          this.style = { top: "calc(-3 * 120px)" };
         }
       },
     },

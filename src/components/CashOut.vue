@@ -1,8 +1,16 @@
 <style scoped>
 .btn {
   position: fixed;
-  top: calc(100% - 30px);
+  top: calc(100% - 100px);
   left: 50%;
+  background: red;
+  color: #fff;
+  font-size: 22px;
+  border: none;
+  width: 150px;
+  height: 50px;
+  border-radius: 12px;
+  box-shadow: 0 0 6px #fff;
 }
 .disabled {
   opacity: 0.5;
@@ -31,7 +39,7 @@ export default {
       button_position: {},
       button_style: {
         left: "50%",
-        top: "calc(100% - 30px)",
+        top: "calc(100% - 100px)",
       },
     };
   },

@@ -1,8 +1,38 @@
-<style scoped></style>
+<style scoped>
+#app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+#app img {
+  width: 100%;
+  height: 100%;
+}
+#app .jackpot-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 450px;
+  border-radius: 16px;
+  padding: 16px;
+  background: #fff;
+  color: #333;
+  border: 2px solid #ddd;
+}
+#app .jackpot-box .credit {
+  font-size: 22px;
+  text-align: center;
+}
+</style>
 <template>
   <div id="app">
-    <div>your credit is: {{ credit }}</div>
-    <Jackpot @start="onStart" :result="result" :startSpin="start_spin" />
+    <img src="@/assets/img/background.png" alt="" />
+    <div class="jackpot-box">
+      <div class="credit">your credit is: {{ credit }}</div>
+      <Jackpot @start="onStart" :result="result" :startSpin="start_spin" />
+    </div>
     <div>
       <CashOut @cashout="onCashOut" />
     </div>

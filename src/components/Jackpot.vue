@@ -93,7 +93,6 @@ export default {
   props: {
     result: {},
     startSpin: {},
-    winner: false,
   },
   components: {
     JackpotCol,
@@ -132,6 +131,7 @@ export default {
   },
   data: () => {
     return {
+      winner: false,
       isSpin1: false,
       isSpin2: false,
       isSpin3: false,

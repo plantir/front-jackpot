@@ -57,9 +57,10 @@ export default {
       this.credit = 0;
     },
     onStart() {
-      if (this.start_spin) return;
+      if (this.start_spin) return "spining";
       if (this.credit < 1) {
-        return alert("your credit is 0 please refresh the page");
+        alert("your credit is 0 please refresh the page");
+        return "no credit";
       }
       this.start_spin = true;
       let result = this.rollAll();
@@ -101,8 +102,8 @@ export default {
             this.credit += 40;
           }
         }
+        this.credit--;
       }, 3000);
-      this.credit--;
     },
     rollAll() {
       let col1 = this.rollCol();
